@@ -1,10 +1,11 @@
 
 import streamlit as st
 import pandas as pd
+import os
 import joblib
 
-# Cargar modelo
-model = joblib.load('../models/modelo_triage.pkl')
+model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'modelo_triage.pkl')
+model = joblib.load(model_path)
 
 # Diccionario para codificar el motivo
 motivo_map = {
